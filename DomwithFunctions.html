@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom with Functions</title>
+</head>
+<body>  
+
+    <ul id="unorder">
+        <li>javaScript</li>
+    </ul>
+
+    <script>
+        function addLanguages(language){
+
+            const li = document.createElement("li")
+            const text = document.createTextNode(`${language}`)
+            li.appendChild(text)
+           document.querySelector("#unorder").appendChild(li)
+        }
+
+        addLanguages("java")
+        addLanguages("python")
+        addLanguages("c++")
+        addLanguages("goLang")
+
+        function editLanguages(place,newLanguage){
+          
+            const un = document.querySelector(`li:nth-child(${place})`)
+            if(un&&newLanguage){
+            const newElement = document.createElement("li")
+            newElement.textContent=newLanguage
+            un.replaceWith(newElement)
+            }
+            else{
+                console.log("Element is not present in list");
+            }
+        }
+
+        editLanguages(1,"JS")
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPage</title>
+    <style>
+        .html-body{
+         background-color: black;
+         color: aliceblue;
+    }
+    .heading{
+        margin: 20px;
+    }
+    </style>
+</head>
+<body class="html-body">
+    <div class="heading">
+            <h1 id="title"> My Page Title <span style="display: noneu;"> is invisible </span></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, rem.</p>
+            </div>
+<div class="ulParent">
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+</div>
+    <script>
+        const doc = document.getElementsByClassName("heading")
+        const body = document.querySelector(".html-body");
+        // console.log(body.children);
+        const text =  body.lastChild.textContent
+        console.log(text);
+        const childNodes = Array.from(body.childNodes)
+        // childNodes.forEach((item)=>(console.log("\n "+item.innerText)))
+    //    console.log(body.children[1].innerText);
+        const childrens = body.children
+        // console.log(childrens);
+        // console.log(childrens[1]);
+       const chToP = childrens[1].childNodes[0].parentElement
+    //    console.log(chToP);
+ 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateContentUsingJS</title>
+</head>
+<body>
+        
+    <script>
+            const div= document.createElement("div")
+                div.className= "parent"
+                div.id= "pid"
+                div.setAttribute("title","parent01")
+                div.style.color="white"
+                div.style.backgroundColor="black"
+                // div.createTextNode(" this is my text")
+                const textNode= document.createTextNode("myTextNode")
+                div.appendChild(textNode)
+                document.body.appendChild(div)
+    </script>
+</body>
+</html>
