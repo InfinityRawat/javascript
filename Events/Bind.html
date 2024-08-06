@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+        <button id ="clicked">Clicked</button>
+</body>
+
+    <script>
+        class react{
+            constructor(){
+                this.library="react";
+                this.server="https://localhost";
+                // here we have to bind the context of this constructor with the method
+                // execution context that why we are sending this(contructor) in method
+                document.querySelector("button").addEventListener('click',this.handleClick.bind(this));
+            }
+
+            handleClick(){
+                console.log("clicked");
+                console.log(this.server);
+            }
+        }   
+        const button = new react();
+    </script>
+</html>

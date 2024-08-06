@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuessGame</title>
+        <style>
+            .container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                width: 100vw;
+                background-color: beige;
+        }
+        </style>
+</head>
+<body>
+        <div class="container" align="center">
+            <h1> Guess a number Game !</h1>
+            <form action="">
+                <label for="guess">Guess a Number</label><br><br>
+                <input type="text" name="GuessNo" id="guess">
+                <br><br><br>
+                <input type="submit" value="submitGuess" id="submitButton">
+
+                <br><br>
+                <div class="displayGuess">
+                <p>PreviousGame: <span id="prev"></span></p> 
+                <p>Remaining Game: <span id="remain"></span></p> 
+                <p class="lowOrHi"></p>
+                <!-- <label for="prev">Previous Guess</label> -->
+                <!-- <h3 id="prev"></h3> -->
+                <!-- <label for="remain">Remaining Guess</label> -->
+                <!-- <h3 id="remain"></h3> -->
+            </div>
+            </form>
+        </div>
+        <script src="guesslogic.js"></script>
+</body>
+</html>

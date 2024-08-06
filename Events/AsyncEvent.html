@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsyncEvent</title>
+    <style>
+        .container{
+            height: 250px;
+            width: 300px;
+          margin: 100px;
+            border: solid black 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    input{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+             <input id="button" type="button" value="stop">
+            
+
+             <input id="stopInterval" type="button" value="stop Iterval">
+
+        </div>
+
+        <script>
+           const button =  document.querySelector("#button")
+
+        //    timeout-> run function one time, after timeout time; args -> fuctionhandler
+        // function reference and timeout time in ms
+            const fun = function(){
+                console.log("this run only one time ");
+            }
+       const timeoutFn =  setTimeout(fun,3000);
+            // to stop timeout we use clearTimeout function
+            //  cleartimeout function need reference of setTimeout
+
+            
+                const stop = document.querySelector("#button")
+                stop.addEventListener('click',(event)=>{
+                    console.log("Clear Timeout");
+                    clearTimeout(timeoutFn);
+                })
+            
+
+            // clearTimeout(fun)
+
+
+        // setInterval() run function after every interval/timeout time- it need 
+        // same parameter as run timeout
+
+        const fun2 = function(){
+            let time = new Date().toLocaleTimeString();
+            console.log("time is ",time);
+        }
+
+        const interval = setInterval(fun2,2000)
+
+        // stop timeout 
+       const stopItr=  document.querySelector("#stopInterval")
+       stopItr.addEventListener('click',
+        (event)=>{
+            console.log("stopping intervals");
+            clearInterval(interval);
+        }
+       )
+        </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<style>
+    img{
+
+        height: 400px;
+        width: 300px;
+    }
+</style>
+<body>
+        <h1>Events</h1>
+     
+        <div class="container">
+            <ul id="images">
+                <l1><img id= "water" src="fetchWater.jpg" alt="water"></l1>
+                <l1><img id ="room" src="room.jpg" alt="room"></l1>
+                <l1> <img id="tree" src="trees.jpg" alt="trees"></l1>
+                <l1><a id="link" href="#">GoToGoogle</a></l1>
+            </ul>
+            </div>  
+            <script>
+                const ul = document.querySelector(".container #images")
+                const img = document.getElementById("water")
+                // ul.addEventListener(('click'),(event)=>{
+                //     event.preventDefault();
+                //     console.log(event.target);
+                // })
+                //  ul.addEventListener(('click'),(event)=>{
+                //     event.preventDefault();
+                //     console.log(event.target);
+                //     console.log("this is event from container");
+                // })
+
+                // img.addEventListener(('click'),(event)=>{
+                //     event.preventDefault();
+                //     event.stopPropagation();
+                //     console.log(event.target);
+                //     console.log("event from img")
+                //     // alert("this is img")
+                // })
+
+                ul.addEventListener(('click'),(event)=>{
+                    // event.preventDefault();
+                    // console.log(event);
+                    // console.log(event.target.tagName);
+                    // console.log(event.target.parentNode);
+                    if(event.target.tagName==="IMG"){
+                        const rm = event.target.parentNode;
+                        
+                        rm.remove();
+                    }
+                    
+                })
+
+               
+            </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexicalClouser</title>
+</head>
+<body>
+        <button id="Orange">Orange</button>
+        <button id="Green">Green</button>
+
+</body>
+<script>
+    // this eventlistner needs a function
+    // if we give function -> colorHandler it is just reference of function, not do anything
+    // if we give colorHandler() like this it will execute function, at line 17 itself
+    // thats why we have to create a inner function which we are going to return 
+    document.querySelector("#Orange").addEventListener('click',colorHandler("orange"))
+    document.querySelector("#Green").addEventListener('click',colorHandler("green"))
+   
+    // function colorHandler(color){
+    //     document.body.style.backgroundColor=color;
+    // }
+
+    function colorHandler(color){
+        // color inside function -> lexical scope
+        // returning function it return the whole scope this of colorhandler not onlu return one
+        return function(){
+            document.body.style.backgroundColor=color;
+        }
+    }
+</script>
+</html>
+
+<!-- // lexical scope is the scope of function's property.
+// for eg if we have function inside function 
+// outer function prop can be accessed by innerfunction by not viceversa
+
+function outer(){
+    name="myName"
+    function inner(){
+        console.log(name);
+    }
+    inner()
+}
+outer();
+console.log(); -->
